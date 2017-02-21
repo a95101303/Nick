@@ -1,0 +1,26 @@
+http://coding.memory-forest.com/%E5%A6%82%E4%BD%95%E7%94%A8git-%E5%B0%87%E5%8E%9F%E5%A7%8B%E7%A2%BC%E4%B8%8A%E5%82%B3%E8%87%B3-github.html
+
+http://gogojimmy.net/2012/01/17/how-to-use-git-1-git-basic/
+
+
+if you bump into the problem of this:
+
+$ git push -u origin master
+
+To git@github.com:yangchao0718/cocos2d.git
+
+ ! [rejected]        master -> master (non-fast-forward)
+
+error: failed to push some refs to 'git@github.com:yangchao0718/cocos2d.git
+
+hint: Updates were rejected because the tip of your current branch is behin
+
+hint: its remote counterpart. Integrate the remote changes (e.g.
+
+hint: 'git pull ...') before pushing again.
+
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+and see this web, it can help you
+http://jingyan.baidu.com/article/f3e34a12a25bc8f5ea65354a.html 

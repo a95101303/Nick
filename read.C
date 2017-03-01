@@ -6,7 +6,7 @@
 #include <TCanvas.h>
 
 using namespace std;
-void xAna(std::string inputFile){
+void read(std::string inputFile){
 
   // now we can perform the fit
   TFile *f1 = TFile::Open("electrons_250_GeV_5_7_X0.root");

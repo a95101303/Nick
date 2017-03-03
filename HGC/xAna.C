@@ -32,11 +32,11 @@ void xAna(std::string inputFile){
   int a=h_tc17->GetMaximumBin();
   h_tmc1 = h_tc17->GetXaxis()->GetBinCenter(a);
 
-  //find the RMS
+  //find the std dev
   float RMS;
   RMS=h_tc17->GetRMS();
 
-  //find the std dev
+  //find the std dev's std dev
   float RMSError;
   RMSError=h_tc17->GetRMSError();
      

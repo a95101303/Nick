@@ -32,14 +32,16 @@ void xAna(std::string inputFile){
   int a=h_tc17->GetMaximumBin();
   h_tmc1 = h_tc17->GetXaxis()->GetBinCenter(a);
 
-  //find the std dev
+  //find the RMS
   float RMS;
-  RMS=h_tc17->GetRMS();
-
-  //find the std dev's std dev
+  RMS=h_tc17->GetStdDev();
+  //or can use RMS=h_tc17->GetRMS();
+  
+  //find the std dev
   float RMSError;
-  RMSError=h_tc17->GetRMSError();
-     
+  RMSError=h_tc17->GetStdDevError();
+  //or can use RMSError=h_tc17->GetRMSError();
+   
   //Create the Random that fit with RMS*2 range
   TF1 *fitplot= new TF1 ("fitplot","gaus",-2*(RMS),2*(RMS));
   h_tc17->Fit("fitplot","R");

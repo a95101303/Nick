@@ -34,16 +34,26 @@ void xAna(std::string inputFile){
 
   //find the RMS
   float RMS;
-  RMS=h_tc17->GetBinContent(h_tc17->GetRMSError());
+  RMS=h_tc17->GetStdDev();
+  //or can use RMS=h_tc17->GetRMS();
   
+  //find the std dev
+  float RMSError;
+  RMSError=h_tc17->GetStdDevError();
+  //or can use RMSError=h_tc17->GetRMSError();
+   
   //Create the Random that fit with RMS*2 range
-  TF1 *fitplot= new TF1 ("fitplot","gaus",-RMS*2,RMS*2);
+  TF1 *fitplot= new TF1 ("fitplot","gaus",-2*(RMS),2*(RMS));
   h_tc17->Fit("fitplot","R");
-  //And also can be this:h_tc17->Fit("gaus","","",-2*RMS,2*RMS)
+  //And also can be this:
+  //h_tc17->Fit("gaus","","",-2*RMSError,2*RMSError);
   
 
   gStyle->SetOptFit(111111);
   c1->Print("TimeCorrected_17_Amp_0gaus.pdf");
   cout<<h_tmc<<endl;
   cout<<h_tmc1<<endl;   
+  cout<<RMSError<<endl;
+  cout<<RMS<<endl;
 }
+

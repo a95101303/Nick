@@ -9,6 +9,9 @@
 #include <TRandom3.h>
 #include <TF1.h>
 #include <fstream>
+#include <TStyle.h>
+#include <TROOT.h>
+#include <TLegend.h>
 using namespace std;
 
 void xAna(std::string inputFile){
@@ -45,10 +48,29 @@ void xAna(std::string inputFile){
    
   //Create the Random that fit with RMS*2 range
   TF1 *fitplot= new TF1 ("fitplot","gaus",-0.35*(RMS),0.35*(RMS));
+  fitplot->SetLineColor(2);
   h_tc17->Fit("fitplot","R");
   //And also can be this:
   //h_tc17->Fit("gaus","","",-2*RMSError,2*RMSError);
   
+  //Draw Legend
+  TLegend* leg = new TLegend(0.1,0.7,0.38,0.9);
+  leg->AddEntry(h_tc17,"time_correct17");
+  leg->AddEntry(fitplot,"fitgausplot");
+  leg->Draw();
+  
+  //Latex
+  //TString a= "";
+  //TString b= "";
+  //TString c= "";
+  //TLatex Tl; Tl.SetTextFont(72); Tl.SetTextSize(0.04); 
+  //Tl.SetNDC(kTRUE); 
+  //Tl.SetTextAlign(22);
+  //Tl.DrawLatex(0.5,0.96,a);
+  //Tl.DrawLatex(0.75,0.6,b);
+  //Tl.DrawLatex(0.75, 0.53,c);
+
+
   //Set some parameter and print
   gStyle->SetOptFit(111111);
   c1->Print("TimeCorrected_17_Amp_0_0.35gaus.pdf");
@@ -60,9 +82,10 @@ void xAna(std::string inputFile){
   //Set the text file
   ofstream fout3;
   fout3.open(("Parameter:0.35*RMS.txt"),ios::out| ios::app);
-  fout3 << fitplot->GetParameter(1) << " " << fitplot->GetParError(1) << " "
-        << fitplot->GetParameter(2) << " " << fitplot->GetParError(2) <<endl;
+  fout3 << "Mean:"<< fitplot->GetParameter(1) << " " <<"Meanerror:"<< fitplot->GetParError(1) << " "
+        << "SIgma:"<<fitplot->GetParameter(2) << " " <<"Sigmaerror:"<<fitplot->GetParError(2) <<endl;
   fout3.close();
+  
   
 }
 

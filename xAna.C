@@ -47,11 +47,11 @@ void xAna(std::string inputFile){
   //or can use RMSError=h_tc17->GetRMSError();
    
   //Create the Random that fit with RMS*2 range
-  TF1 *fitplot= new TF1 ("fitplot","gaus",-0.35*(RMS),0.35*(RMS));
+  TF1 *fitplot= new TF1 ("fitplot","gaus",-2*(RMS),2*(RMS));
   fitplot->SetLineColor(2);
   h_tc17->Fit("fitplot","R");
   //And also can be this:
-  //h_tc17->Fit("gaus","","",-2*RMSError,2*RMSError);
+  //h_tc17->Fit("gaus","","",-*RMSError,2*RMSError);
   
   //Draw Legend
   TLegend* leg = new TLegend(0.1,0.7,0.38,0.9);
@@ -81,7 +81,7 @@ void xAna(std::string inputFile){
 
   //Set the text file
   ofstream fout3;
-  fout3.open(("Parameter:0.35*RMS.txt"),ios::out| ios::app);
+  fout3.open(("Parameter:2*RMS.txt"),ios::out| ios::app);
   fout3 << "Mean:"<< fitplot->GetParameter(1) << " " <<"Meanerror:"<< fitplot->GetParError(1) << " "
         << "SIgma:"<<fitplot->GetParameter(2) << " " <<"Sigmaerror:"<<fitplot->GetParError(2) <<endl;
   fout3.close();

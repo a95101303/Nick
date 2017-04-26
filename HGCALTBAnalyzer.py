@@ -55,7 +55,7 @@ textfilename = 'inputrootfiles.txt'
 outputfilename = ''
 
 ##
-## This part of code will get the calibration constants. 
+# This part of code will get the calibration constants. 
 ##
 '''calibration={'17':0.0,
              '18':0.0,

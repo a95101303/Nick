@@ -174,7 +174,7 @@ def analyze(timingTree, allhisto_, ampCutIndex, calib):
                 
                 
                 ## fill photek time information  
-                allhisto_['photek_time'].Fill(tt_gauspeak[16])
+                allhisto_['h_tphotek'].Fill(tt_gauspeak[16])
                 
                 ## fill the corrected timing info
                 allhisto_['timecorrected_'+cellnumber].Fill(time_calibrated)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python                                                                                                                                                               
+#//usr/bin/env python                                                                                                                                                               
 
 from ROOT import TFile, TTree, TH1F, TH1D, TH1, TCanvas, TChain,TGraphAsymmErrors, TMath, TH2D, TLorentzVector, AddressOf, gROOT, TH2F
 import ROOT as ROOT
@@ -55,7 +55,7 @@ textfilename = 'inputrootfiles.txt'
 outputfilename = ''
 
 ##
-# This part of code will get the calibration constants. 
+## This part of code will get the calibration constants. 
 ##
 '''calibration={'17':0.0,
              '18':0.0,
@@ -174,7 +174,7 @@ def analyze(timingTree, allhisto_, ampCutIndex, calib):
                 
                 
                 ## fill photek time information  
-                allhisto_['h_tphotek'].Fill(tt_gauspeak[16])
+                allhisto_['photek_time'].Fill(tt_gauspeak[16])
                 
                 ## fill the corrected timing info
                 allhisto_['timecorrected_'+cellnumber].Fill(time_calibrated)

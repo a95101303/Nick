@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage{float}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+
+\title{CMS detector introduction and HGCAL}
+\author{YEH CHIH HSIANG}
+\maketitle
+
+\section{CMS detector}
+In the CMS detector, they can part in five section(from inter to outer):\\
+(1)tracking detector:(a)pixel detector(b)silicon sensor\\
+(2)ECAL\\
+(3)ECAL preshower\\
+(4)HCAL\\
+(5)Muon chamber + return Yoke\\
+And in the picture[1], we can see these five parts.
+
+This is the detector before HGCAL, and we will talk about HGCAL later.\\
+
+In the following, We will talk about the detail of the detector:
+\section{trakiing}
+
+Tracking, in the word, we can use this to track the particle path and we can reconstruct the things we want. In the design, we have two type trackerS, and these two parts have different principle:
+
+\subsection{Pixel detector}
+
+
+
+\subsection{silicon sensor}
+
+\subsubsection{Principle}
+In the siiicon sensor, the principle is that when the "charge particle" go through the silicon, it can ionize the silicon and produce the electron-hole pair, and it can produce the current signal to the electronics, and we can use this signal to reconstruct the path of the charge particle.
+
+\subsubsection{Thinking}
+**Why the photon can't give the energy to the silicon sensor and ionize it like the photoelectric effect?**\\
+I think this is the good question so i write down.\\
+
+Because when the photon at this stage, the energy of photon is very high, and when it go through the silicon, the cross section of the photoelectric effect in the silicon sensor is very low, and it's too small to ignore. In this stage, the domain effect is pair production and Brem. And the pair production electron and positron can be tracked.\\ 
+(I will talk about this in the later chapter, it related to the photon interact with matter and charge particle interact with matter.)
+
+\section{Calorimeter}
+In the next part, we will touch the Calorimeter, and because the Calorimeter principle is all similar, so i will talk the big picture in this part:\\
+In the Calorimeter, we use two part to measure the energy:
+(1)Absorber:divide the particle energy to many part\\
+(2)Active layer:record the signal of particle when particle strike on the active layer\\
+\subsection{Absorber}
+Because if we want to measure "one particle enegy"\\
+->Thinking about the high-energy electron(GeV)in your brain\\ 
+If electron strike on the silicon, it won't give all the energy to silicon,
+Because ionization energy is scale of eV, so we need to let the particle divide into many part, and this many part can reduce the enegy scale to eV and we can measure these individually and sum them to reconstruct the origin particle energy
+\subsection{Active layer}
+The things that we use to record the energy, like some use the scintillator or silicon to record.
+
+
+
+
+\section{Electromagnetic Calorimeter}
+
+\subsection{Principle}
+In the ECAL, we want to measure the electromagnetic interaction energy, and we know that the electromagnetic enegy is the charge particle after many process to give out this energy, and we can measure the energy to reconstruct the information of the "charge particle"\\
+In this stage, we want to do is to measure the "electron","positron","photon"
+energy and we can also use this stage to track these three particle. (But the resolution is not good, because the main purpose of the calorimeter is used to measure energy.\\
+Question: Why we say "charge particle" isn't included the pion, moun or other charge particle, just the three particles we say before?\\
+(I will talk in the end)\\
+
+\subsection{Process}
+In the ECAL, these three particels go through the two process (main):
+\subsubsection{Bremstralung}
+Brem, can say as "braking radiation", the principle is that:\\
+When the charge paricle go through the strong nuclear field, the charge particle will bend and it will release the photon. And because more strong nuclear field, more photon that will be released, so if we use bigger Z, the nuclear field will bigger, and it will increase the effect of divid energy into many part.\\
+(you can see in many absorber or scintillator, the Z is big)\\
+P.S. Also the charge paricle could produce braking radiation when going through the electron outer the atom, but the cross section is small.\\
+\subsubsection{Pair production}
+This process happen in high energy photon when photon energy is more than 10GeV, and the principle is that:\\
+When the photon go through the nuclear field, it will interact with the nuclear and change the virtual photon, and it will produce the electron and positron.
+\subsection{Thinking}
+Question: Why we say "charge particle" isn't included the pion, moun or other charge particle, just the three particles we say before?\\
+Becuase we want to measure the electron, positron and photon specially, so we use the radiation length to control this, we know the radiation length is that when the particle go through one radiation length, it will give out the first order exponential of the intial energy, and we use this to let the other particle can't rest much energy in this calorimeter.
+
+ 
+
+
+
+
+\section{Experiment design}
+\subsection{Use the things}
+
+(1)DAQ (2)LABVIEW (3)condenser microphone (4)the resistor(220)\\
+(5)the loudspeaker (6)function generator
+
+
+
+This time we do two experiments, and as the following:
+
+\subsection{use the microphone to receive the sound wave and real time give out}
+
+\subsubsection{method}
+Sorry at first, we forgot to picture the condition, so i talk to this.
+(1)We series the resistor and the microphone.\\
+(2)We parallel the microphine to the DAQ to receive the microphone signal.\\
+(3)We can see the sound wave on the LABVIEW when we talk.\\
+(4)We use the real time give out to connect with the loudspeaker.\\
+(5)We talk and see if it will reback our sound to the loudspeaker.\\
+\subsubsection{result}
+In the result, there are so many noise that in the LabVIEW control front pad, we can see the noise on it.\\
+And the second (i think this is bright) is that our sound tranform by the microphone is very different from origin.\\ 
+(and i think many noise superposition on it is the most important things)\\
+  
+
+\subsection{Beat note experiment}
+In this experiment, we use four loudspeakers to see the beat phonomenom.
+And our experiment arrange is as following:\\ 
+\subsubsection{arrange}
+(1)We use the same arrange from the last one experiment\\
+(2)We put the two two loudspeaker, every pair connect to the function generator\\
+(3)Put one pair at one microphone side, and the other pair put at the other side.\\
+(4)Use the function generator to see the microphone receive and labview show out.\\
+
+
+
+
+
+\subsubsection{result}
+In the result, we can see that in the picture one, the amplitude is sometimes big and sometimes small, and this one is that we want to see, beat note.\\
+And after fourier transform, we can see that in the picture two, there are two highest peak, and that two high peaks is from the beat note.\\
+Because beat note will show the "outer frequency" and the "inner frequency", and this two frequency have individual value (can give out from formula)\
+
+
+
+\section{Error and the method to improve}
+
+\paragraph{1}
+In the first experiment, we can't finish setting at first because we can't calibrate it to the figure that we can see when we give the microphone the sound, but after many time and TA give us the help,our computer value is not right!We don't calibrate it to the right way so it will not show still.\\
+(originally we think it is the signal problem that the signal is too small to sense, so in the first they take the OP amplifier, but after other group ok, we find out the problem)
+\paragraph{2}
+In the second experiment, we find out that the amplitude of the loudspeaker is the important factor in this experiment, because in the first time we set and it is almost the same as other group that finished before, but we can;t see the beat note characteristics, and after teacher's help, we can see it, and find out that one loudspeaker's amplitude is too big to cover the ther one, so in the first time we can't see the beat note. 
+
+
+ 
+
+
+\end{document}

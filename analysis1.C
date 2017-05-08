@@ -6,8 +6,8 @@
 #include "TH2.h"
 void analysis1()
 {
-	TFile *f = new TFile("electrons_100_GeV_5_7_X0.root");
-	TTree *t1=(TTree*)f->Get("t1065");
+	TFile *f1 = TFile::Open("electrons_100_GeV_5_7_X0.root");
+	TTree *t1=(TTree*)f1->Get("t1065");
 
 
 	//create the histogram that we want to see
@@ -23,9 +23,8 @@ void analysis1()
 	TCanvas* c1= new TCanvas("c1");
      		
 	Long64_t nentries =t1 ->GetEntries();
-	
 	for(Long64_t i=0;i<nentries;i++) {
-		//t1->GetEntry(i);
+		t1->GetEntry(i);
 		cout << gauspeak[16] << endl;
 		h_photek_time->Fill(gauspeak[16]);
      		h_photek_time->SetLineColor(2);

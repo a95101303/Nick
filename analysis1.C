@@ -55,8 +55,8 @@ void analysis1()
 		h_photek_time_amp->Fill(gauspeak[16],amp[16]);
 	}
 	cout << "end" << endl;
-	h_photek_time->SetLineColor(2);
-	//h_photek_time_amp->SetFillColor(3);
+	//h_photek_time->SetLineColor(2);
+	h_photek_time_amp->SetFillColor(3);
 	
 	//set in pdf and print
 	

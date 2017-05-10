@@ -68,7 +68,7 @@ void analysis1()
 	cout << "00000000" << endl;
 	
 	//c2->Print("photek_amp_plot17.pdf");
-	c1->Saveas("photek_time_amp_plot17.pdf");
+	c1->Print("photek_time_amp_plot17.pdf");
 	cout << "savingfig" << endl;
 	//set the rootfile
 	
